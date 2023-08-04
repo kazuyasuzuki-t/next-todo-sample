@@ -5,7 +5,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import {
   ThemeModeProvider,
   ThemeModeContext,
-} from "@/context/isDarkThemeContext";
+} from "@/context/ThemeModeContext";
 import { lightTheme, darkTheme } from "@/styles/theme";
 
 export default function App({ Component, pageProps, router }: AppProps) {
