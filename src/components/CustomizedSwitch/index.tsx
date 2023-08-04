@@ -1,8 +1,8 @@
 import * as React from "react";
+import { useContext } from "react";
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
-import { useAtom } from "jotai";
-import { isDarkThemeAtom } from "@/atoms";
+import { ThemeModeContext } from "@/context/isDarkThemeContext";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -52,8 +52,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export default function CustomizedSwitch() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, setIsDarkMode] = useAtom(isDarkThemeAtom);
+  const { setIsDarkMode } = useContext(ThemeModeContext);
 
   const toggleTheme = () => {
     setIsDarkMode((prev) => !prev);

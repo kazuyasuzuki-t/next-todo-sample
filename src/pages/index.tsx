@@ -14,7 +14,7 @@ export default function Home() {
         variant="h1"
         sx={{ textAlign: "center", color: theme.palette.text.primary }}
       >
-        Jōtai
+        Context
       </Typography>
       <TodoList />
     </Box>
