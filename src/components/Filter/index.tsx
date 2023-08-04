@@ -5,6 +5,7 @@ import {
   RadioGroup,
   FormControlLabel,
   FormControl,
+  useTheme,
 } from "@mui/material";
 
 export const Filter = ({
@@ -14,6 +15,7 @@ export const Filter = ({
   filter: string;
   setFilter: React.Dispatch<React.SetStateAction<string>>;
 }) => {
+  const theme = useTheme();
   return (
     <Box sx={{ textAlign: "center" }}>
       <FormControl>
@@ -21,6 +23,7 @@ export const Filter = ({
           row
           onChange={(e) => setFilter(e.target.value)}
           value={filter}
+          sx={{ color: theme.palette.text.primary }}
         >
           <FormControlLabel value="All" control={<Radio />} label="All" />
           <FormControlLabel

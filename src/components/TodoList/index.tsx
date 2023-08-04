@@ -1,6 +1,13 @@
 import * as React from "react";
 import { useState } from "react";
-import { Box, Button, Typography, Checkbox, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  Checkbox,
+  TextField,
+  useTheme,
+} from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { Filter } from "@/components/Filter";
 import { Todo } from "@/types";
@@ -9,6 +16,7 @@ export const TodoList = () => {
   const [text, setText] = useState<string>("");
   const [todos, setTodos] = useState<Todo[]>([]);
   const [filter, setFilter] = useState<string>("All");
+  const theme = useTheme();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
@@ -76,6 +84,7 @@ export const TodoList = () => {
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "nowrap",
+              color: theme.palette.text.primary,
             }}
           >
             {todo.title}
